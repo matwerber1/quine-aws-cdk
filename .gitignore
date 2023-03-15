@@ -1,0 +1,17 @@
+*.js
+!jest.config.js
+*.d.ts
+node_modules
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+
+# Will be generated at runtime since file contents must be modified based on your selected AWS deployment region 
+quine.conf
+
+.DS_Store
+
+outputs.json
+
+cdk.context.json
