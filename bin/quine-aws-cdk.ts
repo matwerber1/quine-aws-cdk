@@ -40,8 +40,8 @@ async function main() {
     runQuineContainer: true,         // If false, ECS service and dependencies will be created, but desiredCount will be set to zero:
     publicLoadBalancerEnabled: true,
     publicLoadBalancerIngressPeers: [
-       await getMyPublicIpAddress(),        Attempt to retrieve your public IP address (doesn't work in all cases)
-      // ec2.Peer.ipv4('1.2.3.4/32')   Example of explicitly providing an IP address or CIDR block that can access Quine via your load balancer
+       await getMyPublicIpAddress(),       // Attempt to retrieve your public IP address (doesn't work in all cases)
+      // ec2.Peer.ipv4('1.2.3.4/32')       // Example of explicitly providing an IP address or CIDR block that can access Quine via your load balancer
     ]
   });
 
