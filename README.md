@@ -14,7 +14,7 @@ For now, deployments using Amazon Keyspaces will fail.
 
 ### Why Quine currently fails to start with Amazon Keyspaces
 
-As of this writing, Amazon Keyspaces does not support `select DISTINCT` queries needed by Quine. So, underlying infrastructure will successfully deploy but our Quine container on ECS Fargate will fail to start and the CDK deployment will be rolled back. To avoid rolling back *everything*, use the option `runQuineContainer: false,` in [bin/quine-aws-cdk.ts](./bin/quine-aws-cdk.ts) for your first deployment to create an ECS service with desired running task count of 0. Once that successfully deploys, you can then use `runQuineContainer: true`, which will update the service to desired count of 1. The service will still fail to deploy, but at least this way you want need to wait for the entire stack to roll back. 
+As of this writing, Amazon Keyspaces does not support `select DISTINCT` queries needed by Quine. So, underlying infrastructure will successfully deploy but our Quine container on ECS Fargate will fail to start and the CDK deployment will be rolled back. To avoid rolling back *everything*, use the option `runQuineContainer: false,` in [bin/quine-aws-cdk.ts](./bin/quine-aws-cdk.ts) for your first deployment to create an ECS service with desired running task count of 0. Once that successfully deploys, you can then use `runQuineContainer: true`, which will update the service to desired count of 1. The service will still fail to deploy, but at least this way you will not need to wait for the entire stack to roll back. 
 
 ## Quickstart
 
